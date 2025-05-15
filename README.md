@@ -74,8 +74,11 @@ classDiagram
     classDef data fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
     
     class BaseProvider interface
-    class OpenAIAdapter,AnthropicAdapter,MistralAdapter adapter
+    class OpenAIAdapter adapter
+    class AnthropicAdapter adapter
+    class MistralAdapter adapter
     class MultiLLMClient client
     class ProviderFactory factory
-    class CompletionRequest,CompletionResponse data
+    class CompletionRequest data
+    class CompletionResponse data
 ```
