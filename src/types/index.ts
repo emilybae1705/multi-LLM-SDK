@@ -3,11 +3,12 @@ export interface CompletionRequest {
   maxTokens?: number;
   temperature?: number;
   model?: string;
+  response_format?: "text" | "json_object";
+  stream?: boolean;
 }
 
 export interface OpenAIParams {
-  max_tokens?: number;
-  max_completion_tokens?: number;
+  max_output_tokens?: number;
 }
 
 export interface AnthropicParams {
@@ -15,13 +16,14 @@ export interface AnthropicParams {
 }
 
 export interface TokenUsage {
-  promptTokens: number;
-  completionTokens: number;
+  inputTokens: number;
+  outputTokens: number;
   totalTokens: number;
 }
 
 export interface CompletionResponse {
   text: string;
   usage: TokenUsage;
+  json?: any;
   rawResponse?: any;
 }
